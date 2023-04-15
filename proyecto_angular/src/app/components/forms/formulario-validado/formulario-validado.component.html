@@ -1,0 +1,54 @@
+<form [formGroup] = "miFormularioValidado" (submit)="enviarFormulario()">
+
+  <h3>Datos en vivo del formulario: </h3>
+  <p>{{miFormularioValidado.value | json}}</p>
+
+  <!-- Campo Nombre -->
+  <input placeholder="Nombre" formControlName="nombre" />
+  <div *ngIf="nombre?.errors?.['required'] && nombre?.touched">
+    <p>El campo Nombre es Obligatorio</p>
+  </div>
+
+  <!-- Campo Apellidos -->
+  <input placeholder="Apellidos" formControlName="apellidos" />
+
+  <!-- Campo Edadd -->
+  <input type="number" placeholder="edad" formControlName="edad" />
+  <div *ngIf="edad?.errors?.['required'] && edad?.touched">
+    <p>El campo Edad es Obligatorio</p>
+  </div>
+  <div *ngIf="edad?.errors?.['min'] && edad?.touched">
+    <p>El campo edad debe ser mayor a 18. No puedes registrarte con {{edad?.errors?.['min'].actual}} años</p>
+  </div>
+  <div *ngIf="edad?.errors?.['max'] && edad?.touched">
+    <p>El campo edad debe ser menor a 99. No puedes registrarte con {{edad?.errors?.['max'].actual}} años</p>
+  </div>
+
+  <!-- Campo Email -->
+  <input placeholder="Email" formControlName="email" />
+  <div *ngIf="email?.errors?.['required'] && email?.touched">
+    <p>El campo Email es Obligatorio</p>
+  </div>
+  <div *ngIf="email?.errors?.['email'] && email?.touched">
+    <p>Formato invalido</p>
+  </div>
+
+  <!-- Campo Password -->
+  <input type="password" placeholder="password" formControlName="password" />
+  <div *ngIf="password?.errors?.['required'] && password?.touched">
+    <p>El campo password es Obligatorio</p>
+  </div>
+  <div *ngIf="password?.errors?.['pattern'] && password?.touched">
+    <p>El formato no es valido</p>
+  </div>
+
+  <!-- Campo Aceptar terminos -->
+  <input type="checkbox" formControlName="acepta" /> Acepta
+  <div *ngIf="acepta?.errors?.['requiredTrue'] && acepta?.touched">
+    <p>Debes aceptar los terminos</p>
+  </div>
+
+  <!-- Boton para enviar. No se activa hasta que todos los demas campos esten llenados correctamente -->
+  <button type="submit" [disabled]="miFormularioValidado.invalid">Enviar</button>
+
+</form>

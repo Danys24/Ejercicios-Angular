@@ -1,0 +1,19 @@
+<h2>Lista Basica</h2>
+
+<button (click)="iniciarCesion()">{{logout ? 'Iniciar Cesion' : 'Cerrar Cesion'}}</button>
+
+<ng-container *ngIf="!logout; else loginTemplate">
+  <h3>Productos</h3>
+  <div *ngFor="let prod of productoLista; let i = index; let even = even">
+    <div [ngStyle]="even ? {background:'gray'} : {background:'yellowgreen'}">
+      <p>Id: {{i + 1}}</p>
+      <p>Producto: {{prod.nombre}}</p>
+      <p>Precio: {{prod.precio}}COP</p>
+      <p>Descripcion: {{prod.descripcion}}</p>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loginTemplate>
+  <p>Inicie Cesion</p>
+</ng-template>
