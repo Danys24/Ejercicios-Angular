@@ -1,0 +1,48 @@
+<h1>Ejemplos PIPES nativos de Angular</h1>
+
+
+<!-- Pipes para Fechas -->
+<h2>Pipes Para Fechas</h2>
+<p>Mi cumpleaños es: {{dob}}</p>
+<p>Mi cumpleaños con PIPE DATE BASICO es: {{ dob | date }}</p>
+<p>Mi cumpleaños con PIPE DATE BASICO "dd/MM/yyyy" es: {{ dob | date: "dd/MM/yyyy" }}</p>
+
+<p>Mi cumpleaños con PIPE DATE short es: {{ dob | date: "shortDate" }}</p>
+<p>Mi cumpleaños con PIPE DATE full es: {{ dob | date: "fullDate" }}</p>
+
+<p>Mi cumpleaños con PIPE DATE short/full es: {{ dob | date: dateFormat }}</p>
+<button (click)="cambiarFormato()">Cambiar Formato a {{ !cambio ? 'short' : 'full'}}</button>
+
+<!--Pipe para mayusculas y minusculas  uppercase - lowercase -->
+<p>Mi cumpleaños con PIPE DATE MAYUS short/full es: {{ dob | date: dateFormat | uppercase }}</p>
+<p>Mi cumpleaños con PIPE DATE MINUS short/full es: {{ dob | date: dateFormat | lowercase}}</p>
+
+<h4>Bienvenido {{nombre| uppercase}}</h4>
+<h4>nombre de usuario @{{nombre| lowercase}}</h4>
+
+<!-- Pipe para decimales -->
+<p>PI con 5 decimales: {{numero_PI | number: '.5-5'}}</p>
+<p>PI con 2 enteros y 8 decimales: {{numero_PI | number: '2.8-8'}}</p>
+
+<!-- Pipe de Moneda (Currency)-->
+<p>Precio del carrito en Euros: {{precioCarrito | currency: 'EUR'}}</p>
+<p>Precio del carrito en Dolares: {{precioCarrito | currency: 'USD'}}</p>
+<p>Precio del carrito en COP: {{precioCarrito | currency: 'COP'}}</p>
+<p>Precio del carrito en Euros con decimales: {{precioCarrito | currency: 'EUR':true:'.3-3'}}</p>
+
+<!-- JSON pipe -->
+<p>{{persona | json}}</p>
+
+<!-- Pipe para Porcentajes (percent) -->
+<p>Porcentaje de votos: {{cantidad | percent}}</p>
+
+<!-- Pipe para Slice -->
+<p>Texto demaciado largo: {{textoLargo | slice:0:5}}...</p>
+
+<!-- Pipe Personalizado (multiplica)-->
+<p>Resultado: {{ 2 | multiplica: 10}} puntos</p>
+
+<!-- Pipe Personalizado (calcularPuntos)-->
+<p>{{jugador1 | calcularPuntos }}</p>
+<p>{{jugador2 | calcularPuntos }}</p>
+

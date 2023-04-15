@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 //modulos de angular material
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+//Locale para que los formatos obtenidos de los PIPES sean transformados a un formato en español
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES); // registramos el LOCALE_ID de 'es' para poder usarlo en los pipes
 
 import { AppComponent } from './app.component';
 import { SaludoComponent } from './components/saludo/saludo.component';
@@ -17,6 +21,9 @@ import { FormularioComponent } from './components/forms/formulario/formulario.co
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
 import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
+import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { CalcularPuntosPipe } from './pipes/calcular-puntos.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,10 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     FormularioComponent,
     FormularioAnidadoComponent,
     FormularioArrayComponent,
-    FormularioValidadoComponent
+    FormularioValidadoComponent,
+    EjemploPipesComponent,
+    MultiplicaPipe,
+    CalcularPuntosPipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +51,12 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
     MatFormFieldModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    //registramos el Locale ES para que los pipes salgan español
+    {
+      provide: LOCALE_ID, useValue: 'es'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
