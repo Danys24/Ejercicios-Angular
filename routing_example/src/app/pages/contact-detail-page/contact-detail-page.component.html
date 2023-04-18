@@ -1,6 +1,6 @@
-<ng-container *ngIf="contacto.email; else noContacto">
+<ng-container *ngIf="contacto; else noContacto">
   <h1>Contacto: {{id}}</h1>
-  <h3>Nombre: {{contacto.nombre}}</h3>
+  <h3>Nombre: {{contacto | nombreCompleto}}</h3>
   <h3>Email: {{contacto.email}}</h3>
 </ng-container>
 

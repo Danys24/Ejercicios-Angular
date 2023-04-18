@@ -1,0 +1,60 @@
+{"results":[
+  {
+    "gender":"female",
+    "name": {
+            "title":"Mrs",
+            "first":"Layla",
+            "last":"Hughes"
+            },
+    "location": {
+                  "street": {
+                            "number":4133,
+                            "name":"Great North Road"
+                            },
+                  "city":"New Plymouth",
+                  "state":"Otago",
+                  "country":"New Zealand",
+                  "postcode":73140,
+                  "coordinates":{
+                                  "latitude":"47.7820",
+                                  "longitude":"68.6290"
+                                },
+                  "timezone": {
+                                "offset":"+4:30",
+                                "description":"Kabul"
+                              }
+                },
+    "email":"layla.hughes@example.com",
+    "login": {
+                "uuid":"847a6599-b10b-47d2-b6f7-31472b46cc07",
+                "username":"heavyduck175","password":"wildman",
+                "salt":"eaSDZk9y",
+                "md5":"0a4e15d6a16596e61c9afe8b28757b20",
+                "sha1":"1baeca6757f59d484197d70eb3fbaf6af15af0b9",
+                "sha256":"9b1cfaa3371a364639d85433e6c29f29f9874163ef77d2f84d23090e2a4ae2c1"
+              },
+    "dob":{
+            "date":"1959-04-17T01:45:40.279Z",
+            "age":64
+          },
+    "registered":{
+                    "date":"2012-03-15T15:40:08.775Z",
+                    "age":11
+                  },
+    "phone":"(623)-870-4569",
+    "cell":"(870)-689-6922",
+    "id":{"name":"","value":null},
+    "picture":{
+                "large":"https://randomuser.me/api/portraits/women/14.jpg",
+                "medium":"https://randomuser.me/api/portraits/med/women/14.jpg",
+                "thumbnail":"https://randomuser.me/api/portraits/thumb/women/14.jpg"
+              },
+    "nat":"NZ"
+  }],
+"info":{
+        "seed":"c26a36634dbcfd17",
+        "results":1,
+        "page":1,
+        "version":"1.4"
+        }
+}

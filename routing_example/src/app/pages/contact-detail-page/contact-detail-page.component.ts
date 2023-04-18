@@ -5,6 +5,8 @@ import { Contacts } from '../../models/contacts.interface';
 //ActivateRute sirve para acceder a parametros enviados a la ruta y poder renderizarlos
 import { ActivatedRoute } from '@angular/router';
 
+import { Contacto } from '../../models/randomuser';
+
 @Component({
   selector: 'app-contact-detail-page',
   templateUrl: './contact-detail-page.component.html',
@@ -14,12 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactDetailPageComponent implements OnInit{
 
   id: any | undefined;
-  contacto:Contacts = {
-    id:0,
-    nombre:'',
-    email:'',
-    sexo:'mujer'
-  };
+  contacto: Contacto | undefined;
 
   filtroPrevio:string='todos';
 

@@ -1,6 +1,8 @@
-<h3>Pagina de Login</h3>
 
-<input  [(ngModel)]="email" type="email" name="email" placeholder="ejemplo@email" />
-<input  [(ngModel)]="password" type="password" name="password" placeholder="password" />
+<!--<input  [(ngModel)]="email" type="email" name="email" placeholder="ejemplo@email" />-->
+<!--<input  [(ngModel)]="password" type="password" name="password" placeholder="password" />-->
 
-<button (click)="loginUser()">Ingresar</button>
+<!--<button (click)="loginUser()">Ingresar</button>-->
+
+<!-- Renderizamos el componente LoginForm -->
+<app-login-form (loginAction)="loginUser($event)"></app-login-form>

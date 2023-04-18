@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { Contacts } from '../../models/contacts.interface';
+import { Contacto } from '../../models/randomuser';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +10,7 @@ import { Contacts } from '../../models/contacts.interface';
 })
 export class HomePageComponent implements OnInit{
 
-  contactoSeleccionado: Contacts | undefined;
+  contactoSeleccionado: Contacto | undefined;
   token: string | null = null;
 
   constructor( private router: Router ){}

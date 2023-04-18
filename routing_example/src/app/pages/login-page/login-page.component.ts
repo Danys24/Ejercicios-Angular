@@ -9,8 +9,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginPageComponent implements OnInit{
 
-  email: string = '';
-  password: string = '';
+  //email: string = '';
+  //password: string = '';
 
   iniciarCesion:string|null = null;
 
@@ -22,11 +22,13 @@ export class LoginPageComponent implements OnInit{
 
   }
 
-  loginUser():void{
+  loginUser(value:any):void{
+
+    let {email, password} = value;
 
     //email:eve.holt@reqres.in
     //password: 1234
-    this.authService.login(this.email, this.password).subscribe(
+    this.authService.login(email,password).subscribe(
       (response) => {
         if(response.token){
           sessionStorage.setItem('token', response.token);

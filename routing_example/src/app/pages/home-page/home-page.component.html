@@ -2,7 +2,7 @@
 <h3>¡Bienvenido!</h3>
 
 <ng-container *ngIf="contactoSeleccionado; else noSeleccionado">
-  <h4>Amigo Invisible: {{contactoSeleccionado.nombre}}</h4>
+  <h4>Amigo Invisible: {{contactoSeleccionado.name.first}}</h4>
 </ng-container>
 <ng-template #noSeleccionado>
   <div>
@@ -17,8 +17,8 @@
 
 <div>
   <p>Filtros: </p>
-  <a [routerLink]="['/contactos']" [queryParams]="{sexo:'mujer'}"> Amigas  | </a>
-  <a [routerLink]="['/contactos']" [queryParams]="{sexo:'hombre'}"> Amigos</a>
+  <a [routerLink]="['/contactos']" [queryParams]="{sexo:'female'}"> Amigas  | </a>
+  <a [routerLink]="['/contactos']" [queryParams]="{sexo:'male'}"> Amigos</a>
 
 </div>
 

@@ -1,0 +1,18 @@
+<h2>Random User</h2>
+<ng-container *ngIf="randomContact; else noExist">
+  <div>
+    <h4>{{randomContact.name.title}} {{randomContact.name.first}} {{randomContact.name.last}}</h4>
+    <img src="{{randomContact.picture.large}}" alt="contacto">
+    <h4>Email: {{randomContact.email}}</h4>
+    <h4>Genero: {{randomContact.gender}}</h4>
+    <div>
+      <button>Elegir Como Amigo Invisible</button>
+      <button>Volver</button>
+    </div>
+  </div>
+</ng-container>
+<ng-template #noExist>
+  <p>El contacto no existe, cargando...</p>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
