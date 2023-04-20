@@ -12,6 +12,7 @@ import { Contacto, Results } from '../../models/randomuser';
 })
 export class ContactsPageComponent implements OnInit{
 
+  cargando:boolean = true;
   filtroSexo: string = 'todos';
 //  listaContactos: Contacts[] = [];
   listRandomUser: Contacto[] = [];
@@ -37,9 +38,10 @@ export class ContactsPageComponent implements OnInit{
             {
               next: (response:Results) => {
                 response.results.forEach((randomContact:Contacto, index:number) => {
-                  this.listRandomUser.push(randomContact)
+                  this.listRandomUser.push(randomContact);
                 })
                 console.log(this.listRandomUser);
+                this.cargando = false;
               },
               error: (error) => console.error(`Error: ${error}`),
               complete: () => console.info('Peticion Terminada')
@@ -53,6 +55,7 @@ export class ContactsPageComponent implements OnInit{
                   this.listRandomUser.push(randomContact)
                 })
                 console.log(this.listRandomUser);
+                this.cargando = false;
               },
               error: (error) => console.error(`Error: ${error}`),
               complete: () => console.info('Peticion Terminada')
@@ -82,7 +85,7 @@ export class ContactsPageComponent implements OnInit{
       }
     }
 
-    this.router.navigate(['/home'], navigationExtras);
+    this.router.navigate(['/dashboard'], navigationExtras);
   }
 
 }

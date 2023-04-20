@@ -7,42 +7,54 @@ import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { RandomUserpageComponent } from './pages/random-userpage/random-userpage.component';
 import { AuthGuard } from './guards/auth.guard';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
-  },
-  {
-    path: 'home',
-    component: HomePageComponent,
-    children: [
-      {
-        path: 'hijo',
-        component: HomePageComponent
-      }
-    ],
-    canActivate: [AuthGuard]
+    redirectTo: 'dashboard'
   },
   {
     path: 'login',
     component: LoginPageComponent
   },
   {
-    path: 'contactos',
-    component: ContactsPageComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'contactos/:id',
-    component: ContactDetailPageComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'random',
-    component: RandomUserpageComponent,
-    canActivate: [AuthGuard]
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    children : [
+      {
+        path: '',
+        component: HomePageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'contactos',
+        component: ContactsPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'tareas',
+        component: TasksPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'contactos/:id',
+        component: ContactDetailPageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'random',
+        component: RandomUserpageComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: '**',
+        component: NotFoundPageComponent
+      }
+    ]
   },
   {
     path: '**',

@@ -18,6 +18,17 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
 import { RandomUserComponent } from './components/random-user/random-user.component';
 import { RandomUserpageComponent } from './pages/random-userpage/random-userpage.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
+import { KanbanTasksComponent } from './components/kanban-tasks/kanban-tasks.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -31,7 +42,11 @@ import { RandomUserpageComponent } from './pages/random-userpage/random-userpage
     LoginFormComponent,
     NombreCompletoPipe,
     RandomUserComponent,
-    RandomUserpageComponent
+    RandomUserpageComponent,
+    NavComponent,
+    DashboardComponent,
+    TasksPageComponent,
+    KanbanTasksComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +57,14 @@ import { RandomUserpageComponent } from './pages/random-userpage/random-userpage
     //formulatios reactivos
     ReactiveFormsModule,
     //Material
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

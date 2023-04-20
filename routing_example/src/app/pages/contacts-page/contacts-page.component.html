@@ -1,12 +1,21 @@
 <h3>Tus Contactos:</h3>
 
-<div *ngFor="let contacto of listRandomUser; let i= index">
+<ng-container *ngIf="!cargando; else errorContact">
+  <div *ngFor="let contacto of listRandomUser; let i= index">
   <div routerLink='{{contacto.id.name}}' [state]="{data: contacto, filtro: filtroSexo}">
     <h6>{{contacto.name.first}} {{contacto.name.last}}</h6>
-    <button (click)="volverHome(contacto)">Seleccionar Amigo Invisible</button>
+    <button mat-raised-button color="primary" (click)="volverHome(contacto)">Seleccionar Amigo Invisible</button>
   </div>
 
 </div>
+
+</ng-container>
+
+<ng-template #errorContact>
+  <p>Cargando...</p>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
 
 <ng-container *ngIf="filtroSexo == 'female' || filtroSexo == 'male'; else errorFilter">
   <p>Mostrando Amigos por sexo "{{filtroSexo}}"</p>
@@ -15,7 +24,6 @@
 
 <ng-template #errorFilter>
   <p>Mostrando la lista completa</p>
-
 </ng-template>
 
-<a routerLink="/home">Volver</a>
+<a routerLink="/dashboard">Volver</a>
