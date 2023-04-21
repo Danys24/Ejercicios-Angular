@@ -1,0 +1,14 @@
+<app-on-push></app-on-push>
+
+<app-detach></app-detach>
+
+<app-reattach [enVivo]="live" ></app-reattach>
+<h5>Mostrar Precio Bitcoin en Vivo</h5>
+<input type="checkbox" [(ngModel)]="live" />
+
+<app-ng-zone></app-ng-zone>
+
+<app-aync-pipe [items$]="items$"></app-aync-pipe>
+<button (click)="addItem()">Añadir Item</button>
+
+
