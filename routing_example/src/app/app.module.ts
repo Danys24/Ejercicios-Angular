@@ -29,6 +29,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
 import { KanbanTasksComponent } from './components/kanban-tasks/kanban-tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { LifeCycleDirective } from './directives/life-cycle.directive';
+import { MouseOverDirective } from './directives/mouse-over.directive';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NavComponent,
     DashboardComponent,
     TasksPageComponent,
-    KanbanTasksComponent
+    KanbanTasksComponent,
+    LifeCycleDirective,
+    MouseOverDirective
   ],
   imports: [
     BrowserModule,

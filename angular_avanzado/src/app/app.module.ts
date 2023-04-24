@@ -10,6 +10,8 @@ import { AttrDirective } from './directives/attr.directive';
 import { StructDirective } from './directives/struct.directive';
 import { LifeCycleDirective } from './directives/life-cycle.directive';
 
+import { AuthFormsModule } from './modules/auth-forms/auth-forms.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +20,12 @@ import { LifeCycleDirective } from './directives/life-cycle.directive';
     EjemploLifeCycleComponent,
     AttrDirective,
     StructDirective,
-    LifeCycleDirective
+    LifeCycleDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
