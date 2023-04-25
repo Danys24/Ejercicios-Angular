@@ -27,7 +27,12 @@ import { AuthFormsModule } from './modules/auth-forms/auth-forms.module';
     AppRoutingModule,
     AuthFormsModule
   ],
-  providers: [],
+  providers: [
+    // Disponemos de las estrategias de precarga
+    OptInPreloadingStrategy,
+    NetworkAwarePreloadStrategy,
+    OnDemandPreloadingStrategy
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
