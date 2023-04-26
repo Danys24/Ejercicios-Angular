@@ -24,6 +24,7 @@
       <a mat-list-item [routerLink]='["/dashboard"]'>Amigo Invisible</a>
       <a mat-list-item [routerLink]='["/dashboard/contactos"]'>Contactos</a>
       <a mat-list-item [routerLink]='["/dashboard/tareas"]'>Tareas</a>
+      <a mat-list-item [routerLink]='["/dashboard/firestore"]' (mouseover)="preloadModule('firestore')">Tienda</a>
       <a mat-list-item (click)="logout()">Cerrar Cesion</a>
     </mat-nav-list>
   </mat-sidenav>

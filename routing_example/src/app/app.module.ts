@@ -32,6 +32,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LifeCycleDirective } from './directives/life-cycle.directive';
 import { MouseOverDirective } from './directives/mouse-over.directive';
 
+import { OnDemandPreloadingStrategy } from './routes/preloading-strategies/on-demand-preloading-strategy';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { MouseOverDirective } from './directives/mouse-over.directive';
     TasksPageComponent,
     KanbanTasksComponent,
     LifeCycleDirective,
-    MouseOverDirective
+    MouseOverDirective,
   ],
   imports: [
     BrowserModule,
@@ -70,7 +71,9 @@ import { MouseOverDirective } from './directives/mouse-over.directive';
     MatListModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [
+    OnDemandPreloadingStrategy
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PreloadingStrategy, Route } from '@angular/router';
 import { EMPTY, Observable, of, mergeMap } from 'rxjs';
-import { PreloadingServiceService, PreloadingOptions } from '../services/preloading-service.service';
+import { PreloadingService, PreloadingOptions } from '../../services/preloading.service';
 
 
 @Injectable({
